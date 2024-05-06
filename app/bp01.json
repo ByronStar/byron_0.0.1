@@ -1,0 +1,273 @@
+{
+  "blueprint": {
+    "icons": [
+      {
+        "signal": {
+          "type": "item",
+          "name": "transport-belt"
+        },
+        "index": 1
+      },
+      {
+        "signal": {
+          "type": "item",
+          "name": "stone-furnace"
+        },
+        "index": 2
+      }
+    ],
+    "entities": [
+      {
+        "entity_number": 1,
+        "name": "inserter",
+        "position": {
+          "x": 67.5,
+          "y": 25.5
+        }
+      },
+      {
+        "entity_number": 2,
+        "name": "transport-belt",
+        "position": {
+          "x": 66.5,
+          "y": 24.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 3,
+        "name": "transport-belt",
+        "position": {
+          "x": 67.5,
+          "y": 24.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 4,
+        "name": "inserter",
+        "position": {
+          "x": 68.5,
+          "y": 25.5
+        }
+      },
+      {
+        "entity_number": 5,
+        "name": "transport-belt",
+        "position": {
+          "x": 69.5,
+          "y": 24.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 6,
+        "name": "transport-belt",
+        "position": {
+          "x": 68.5,
+          "y": 24.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 7,
+        "name": "transport-belt",
+        "position": {
+          "x": 70.5,
+          "y": 24.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 8,
+        "name": "stone-furnace",
+        "position": {
+          "x": 67,
+          "y": 27
+        }
+      },
+      {
+        "entity_number": 9,
+        "name": "stone-furnace",
+        "position": {
+          "x": 69,
+          "y": 27
+        }
+      },
+      {
+        "entity_number": 10,
+        "name": "small-electric-pole",
+        "position": {
+          "x": 70.5,
+          "y": 27.5
+        },
+        "neighbours": [
+          23
+        ]
+      },
+      {
+        "entity_number": 11,
+        "name": "inserter",
+        "position": {
+          "x": 67.5,
+          "y": 28.5
+        }
+      },
+      {
+        "entity_number": 12,
+        "name": "transport-belt",
+        "position": {
+          "x": 67.5,
+          "y": 29.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 13,
+        "name": "transport-belt",
+        "position": {
+          "x": 66.5,
+          "y": 29.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 14,
+        "name": "inserter",
+        "position": {
+          "x": 68.5,
+          "y": 28.5
+        }
+      },
+      {
+        "entity_number": 15,
+        "name": "transport-belt",
+        "position": {
+          "x": 69.5,
+          "y": 29.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 16,
+        "name": "transport-belt",
+        "position": {
+          "x": 68.5,
+          "y": 29.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 17,
+        "name": "inserter",
+        "position": {
+          "x": 67.5,
+          "y": 30.5
+        },
+        "direction": 4
+      },
+      {
+        "entity_number": 18,
+        "name": "stone-furnace",
+        "position": {
+          "x": 67,
+          "y": 32
+        }
+      },
+      {
+        "entity_number": 19,
+        "name": "inserter",
+        "position": {
+          "x": 68.5,
+          "y": 30.5
+        },
+        "direction": 4
+      },
+      {
+        "entity_number": 20,
+        "name": "stone-furnace",
+        "position": {
+          "x": 69,
+          "y": 32
+        }
+      },
+      {
+        "entity_number": 21,
+        "name": "inserter",
+        "position": {
+          "x": 67.5,
+          "y": 33.5
+        },
+        "direction": 4
+      },
+      {
+        "entity_number": 22,
+        "name": "inserter",
+        "position": {
+          "x": 68.5,
+          "y": 33.5
+        },
+        "direction": 4
+      },
+      {
+        "entity_number": 23,
+        "name": "small-electric-pole",
+        "position": {
+          "x": 70.5,
+          "y": 32.5
+        },
+        "neighbours": [
+          10
+        ]
+      },
+      {
+        "entity_number": 24,
+        "name": "transport-belt",
+        "position": {
+          "x": 66.5,
+          "y": 34.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 25,
+        "name": "transport-belt",
+        "position": {
+          "x": 67.5,
+          "y": 34.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 26,
+        "name": "transport-belt",
+        "position": {
+          "x": 69.5,
+          "y": 34.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 27,
+        "name": "transport-belt",
+        "position": {
+          "x": 68.5,
+          "y": 34.5
+        },
+        "direction": 6
+      },
+      {
+        "entity_number": 28,
+        "name": "transport-belt",
+        "position": {
+          "x": 70.5,
+          "y": 34.5
+        },
+        "direction": 6
+      }
+    ],
+    "item": "blueprint",
+    "label": "OreMelting",
+    "version": 281479278493696
+  }
+}

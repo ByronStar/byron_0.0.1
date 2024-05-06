@@ -1,0 +1,9 @@
+{
+	"name": "byron", 
+	"version": "0.0.1",
+	"title": "Tools",
+	"author": "ByronStar",
+	"factorio_version": "1.1.104", 
+	"contact": "benno.mail@fam-staebler.de", 
+	"description": "This is a tools mod"
+}
