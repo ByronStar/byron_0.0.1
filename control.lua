@@ -105,6 +105,25 @@ function GetParms(values, t, idx) --Event pass a table into the function
 	end
 end
 
+function run(command) --Event pass a table into the function
+	local data = {
+		cmd = 0,
+		p1  = nil,
+		p2  = nil,
+		p3  = nil,
+	}
+	GetParms(command.parameter, data, { [0] = "cmd", [1] = "p1", [2] = "p2", [3] = "p3" })
+	if (data.cmd == "init_quickbar") then
+		init_quickbar()
+	elseif (data.cmd == "init_chest") then
+		init_chest()
+	elseif (data.cmd == "export_filter") then
+		export_filter()
+	else
+		game.player.print("unkown command" .. data.cmd)
+	end
+end
+
 function patch(command) --Event pass a table into the function
 	local data = {
 		ore = "stone",
@@ -134,7 +153,7 @@ function patch(command) --Event pass a table into the function
 	end
 end
 
-function export_filter(command) --Event pass a table into the function
+function export_filter() --Event pass a table into the function
 	game.write_file("quickbar.txt", "local bar_filter = {\n", false)
 	for i = 1, 100 do
 		local filter = game.player.get_quick_bar_slot(i)
@@ -163,7 +182,7 @@ function export_filter(command) --Event pass a table into the function
 	game.write_file("infinity.txt", "}\n", true)
 end
 
-function init_chest(command) --Event pass a table into the function
+function init_chest() --Event pass a table into the function
 	local chest_filter = {
 		{ slot = 1,  item = { name = "loader", count = 50, mode = "at-least" } },
 		{ slot = 2,  item = { name = "electric-energy-interface", count = 50, mode = "at-least" } },
@@ -213,43 +232,71 @@ function init_chest(command) --Event pass a table into the function
 	end
 end
 
-function startup(command) --Event pass a table into the function
+function init_quickbar()
 	local bar_filter = {
-		{ slot = 1,  item = "stone-furnace" },
-		{ slot = 2,  item = "assembling-machine-1" },
-		{ slot = 3,  item = "assembling-machine-2" },
-		{ slot = 4,  item = "assembling-machine-3" },
-		{ slot = 5,  item = "oil-refinery" },
-		{ slot = 6,  item = "chemical-plant" },
-		{ slot = 7,  item = "centrifuge" },
-		{ slot = 8,  item = "lab" },
+		{ slot = 1,  item = "burner-mining-drill" },
+		{ slot = 2,  item = "electric-mining-drill" },
+		{ slot = 3,  item = "stone-furnace" },
+		{ slot = 4,  item = "assembling-machine-1" },
+		{ slot = 5,  item = "assembling-machine-2" },
+		{ slot = 6,  item = "assembling-machine-3" },
+		{ slot = 7,  item = "oil-refinery" },
+		{ slot = 8,  item = "chemical-plant" },
+		{ slot = 9,  item = "centrifuge" },
+		{ slot = 10, item = "lab" },
+		
+		{ slot = 11, item = "wooden-chest"},
+		{ slot = 12, item = "steel-chest" },
+		{ slot = 13, item = "transport-belt" },
+		{ slot = 14, item = "underground-belt" },
+		{ slot = 15, item = "splitter" },
+		{ slot = 16, item = "inserter" },
+		{ slot = 17, item = "filter-inserter" },
+		{ slot = 18, item = "stack-inserter" },
+		{ slot = 19, item = "small-electric-pole" },
 
-		{ slot = 11, item = "steel-chest" },
-		{ slot = 12, item = "transport-belt" },
-		{ slot = 13, item = "underground-belt" },
-		{ slot = 14, item = "splitter" },
-		{ slot = 15, item = "inserter" },
-		{ slot = 16, item = "filter-inserter" },
-		{ slot = 17, item = "stack-inserter" },
-		{ slot = 18, item = "small-electric-pole" },
-		{ slot = 19, item = "medium-electric-pole" },
+		{ slot = 21, item = "small-electric-pole" },
+		{ slot = 22, item = "medium-electric-pole" },
+		{ slot = 23, item = "big-electric-pole" },
+		{ slot = 24, item = "small-lamp" },
+		{ slot = 25, item = "red-wire" },
+		{ slot = 26, item = "green-wire" },
+		{ slot = 27, item = "arithmetic-combinator" },
+		{ slot = 28, item = "decider-combinator" },
+		{ slot = 29, item = "constant-combinator" },
+		{ slot = 30, item = "programmable-speaker" },
 
-		{ slot = 20, item = "logistic-chest-storage" },
-		{ slot = 21, item = "small-lamp" },
-		{ slot = 22, item = "red-wire" },
-		{ slot = 23, item = "green-wire" },
-		{ slot = 24, item = "arithmetic-combinator" },
-		{ slot = 25, item = "decider-combinator" },
-		{ slot = 26, item = "constant-combinator" },
-		{ slot = 27, item = "programmable-speaker" },
+		{ slot = 31, item = "offshore-pump" },
+		{ slot = 32, item = "boiler" },
+		{ slot = 33, item = "steam-engine" },
+		{ slot = 34, item = "pipe" },
+		{ slot = 35, item = "pipe-to-ground" },
 
-		{ slot = 31, item = "infinity-chest" },
-		{ slot = 32, item = "loader" },
-		{ slot = 33, item = "infinity-pipe" },
-		{ slot = 34, item = "electric-energy-interface" },
-		{ slot = 35, item = "roboport" },
+		{ slot = 41, item = "burner-mining-drill" },
+		{ slot = 42, item = "electric-mining-drill" },
+		{ slot = 43, item = "stone-furnace" },
+		{ slot = 44, item = "coal" },
+		{ slot = 45, item = "stone" },
+		{ slot = 46, item = "iron-ore" },
+		{ slot = 47, item = "copper-ore" },
+		{ slot = 48, item = "wood" },
+		{ slot = 49, item = "iron-plate" },
+		{ slot = 50, item = "copper-plate" },
+
+		{ slot = 91, item = "infinity-chest" },
+		{ slot = 92, item = "loader" },
+		{ slot = 93, item = "infinity-pipe" },
+		{ slot = 94, item = "electric-energy-interface" },
+		{ slot = 95, item = "roboport" },
+		{ slot = 96, item = "logistic-chest-storage" },
 	}
 
+	for k, v in pairs(bar_filter) do
+		game.player.set_quick_bar_slot(v.slot, v.item)
+	end
+end
+
+function startup(command) --Event pass a table into the function
 	game.player.insert "infinity-chest"
 	game.player.insert "infinity-pipe"
 	game.player.insert "electric-energy-interface"
@@ -260,10 +307,6 @@ function startup(command) --Event pass a table into the function
 
 	for y = 0, 7 do
 		game.player.insert "construction-robot"
-	end
-
-	for k, v in pairs(bar_filter) do
-		game.player.set_quick_bar_slot(v.slot, v.item)
 	end
 
 	FillSpace(0, 0, 256)
@@ -281,8 +324,9 @@ end
 
 function FillSpace(x, y, c)
 	local surface = game.player.surface
+	local area = { left_top = { x - c, y - c }, right_bottom = { x + c, y + c } }
 
-	surface.destroy_decoratives({ left_top = { x - c, y - c }, right_bottom = { x + c, y + c } })
+	surface.destroy_decoratives(area)
 	local tiles = {}
 	for dy = -c, c do
 		for dx = -c, c do
@@ -290,6 +334,7 @@ function FillSpace(x, y, c)
 		end
 	end
 	surface.set_tiles(tiles)
+	game.player.force.chart(area)
 end
 
 function clearSpace(command) --Event pass a table into the function
@@ -338,9 +383,8 @@ commands.add_command("clean_transport", "Remove items from transports", cleanupT
 commands.add_command("clean_assembly", "Remove items from assembly machines", cleanupAssembly)
 commands.add_command("cleanup", "Remove items from machines and transports", cleanup)
 commands.add_command("startup", "Initialize Creative", startup)
-commands.add_command("export_filter", "Save Quickbar setup", export_filter)
-commands.add_command("init_chest", "Save Quickbar setup", init_chest)
 commands.add_command("patch", "Remove items from machines and transports", patch)
+commands.add_command("run", "run one of: export_filter, init_quickbar, init_chest", run)
 
 function entity_placed(event)
 	local player = game.get_player(event.player_index)
